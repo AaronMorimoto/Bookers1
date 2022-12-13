@@ -1,6 +1,4 @@
 class BooksController < ApplicationController
-  def new
-  end
 
   def index
     @books = Book.all
@@ -13,7 +11,8 @@ class BooksController < ApplicationController
     if @book.save
       redirect_to book_path(@book.id)
     else
-      render :new
+      @books = Book.all
+      render :index
     end
   end
 
@@ -23,7 +22,6 @@ class BooksController < ApplicationController
 
   def edit
     @book = Book.find(params[:id])
-    #<%= form_with model: @book, url: update_book_path(@book.id), method: :patch do |f| %>
   end
   
   def update

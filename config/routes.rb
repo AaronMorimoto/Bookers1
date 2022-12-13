@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'books/new'
+  #resources :books
   get 'books' => 'books#index'
   post 'books' => 'books#create'
   get 'books/:id' => 'books#show', as: 'book'

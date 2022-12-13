@@ -23,6 +23,7 @@ class BooksController < ApplicationController
 
   def edit
     @book = Book.find(params[:id])
+    #<%= form_with model: @book, url: update_book_path(@book.id), method: :patch do |f| %>
   end
   
   def update

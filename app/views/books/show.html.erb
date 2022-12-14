@@ -1,13 +1,31 @@
-<div>
-  <%= flash[:notice] %>
-</div>
-
-<h4>Title:</h4>
-  <p><%=@book.title %></p>
+<!DOCTYPE html>
+<html lamg="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    
+    <link rel="stylesheet" href="/assets/stylesheets/books.scss" />
+    <title>Bookers</title>
+  </head>
   
-<h4>Body:</h4>
-  <p><%=@book.body %></p>
+  <body>
+    <div>
+      <%= flash[:notice] %>
+    </div>
+    
+    <p>
+      <strong>Title:</strong>
+      <%=@book.title %>
+    </p>
+    
+    <p>
+      <strong>Body:</strong>
+      <%=@book.body %>
+    </p>
   
-<%= link_to "Edit", edit_book_path(@book.id) %>
-<a>|</a>
-<a href="/books">Back</a>
+    <%= link_to "Edit", edit_book_path(@book.id) %>
+    <a>|</a>
+    <a href="/books">Back</a>
+    
+  </body>
+</html>
